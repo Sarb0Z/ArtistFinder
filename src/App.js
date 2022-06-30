@@ -1,22 +1,29 @@
 import React, { useEffect, useState } from "react";
 import SearchBar from "./Components/SearchBar";
+import axios from "axios"
+
+
+
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState(query || '');
+  const [searchTerm, setSearchTerm] = useState('');
   const [artistData, setArtistData]= useState([]);
-  
   useEffect(() => {
-    fetch("https://rest.bandsintown.com/artists/$`{artistname}`/?app_id=123")
-    .then(response => response.json())
-        // 4. Setting *dogImage* to the image url that we received from the response above
-    .then(data => setArtistData(data.message))
-  },[])
-  
+    
+    axios.get(`https://rest.bandsintown.com/artists/${searchTerm}/?app_id=abc`
+    , {
+      headers: {"Access-Control-Allow-Origin": "*"}
+    })
+    .then((response) => console.log(response.data));
+  }, []);
   return (
     <div className="App">
       <SearchBar
       searchTerm={searchTerm}
       setSearchTerm={setSearchTerm}/>
+      <span>{artistData}</span>
+
+      
     </div>
   );
 }
