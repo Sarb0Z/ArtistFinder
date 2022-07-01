@@ -18,7 +18,6 @@ const EventCard = (props) => {
                 {returnDate(r.datetime).getDate()}/{returnDate(r.datetime).getMonth()}/{returnDate(r.datetime).getFullYear()}
               </h5>
               <h5>Time:{" "}
-              
                 {returnDate(r.datetime).getHours()}:{returnDate(r.datetime).getMinutes()}
               </h5>
               <h5>Venue: {r.venue.name}</h5>
