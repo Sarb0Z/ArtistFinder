@@ -1,34 +1,32 @@
-import React, { useEffect, useState, useRef, setError } from "react";
+import React, { useEffect, useState, setError } from "react";
+import axios from "axios";
+
 import SearchBar from "./Components/SearchBar";
-import axios from "axios"
+import ArtistCard from "./Components/artistCard";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [artistData, setArtistData]= useState([]);
-  const controllerRef = useRef(new AbortController());
-
+  const [searchTerm, setSearchTerm] = useState("");
+  const [artistData, setArtistData] = useState([]);
+  const [flag, setFlag] = useState(false);
   useEffect(() => {
     (async () => {
       try {
-        const response = await axios.request({
-          signal: controllerRef.current.signal,
+        const artist = await axios.request({
           method: "GET",
           url: `https://rest.bandsintown.com/artists/${searchTerm}/?app_id=abc`,
         });
-        setArtistData(response.data.name);
+        setArtistData(artist.data);
+        setFlag(false);
       } catch (error) {
         setError(error);
-      } 
+      }
     })();
   }, [searchTerm]);
   return (
     <div className="App">
-      <SearchBar
-      searchTerm={searchTerm}
-      setSearchTerm={setSearchTerm}/>
-      <span>{artistData}</span>
-
-      
+      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      {searchTerm ? <ArtistCard artist={artistData} setFlag={setFlag} /> : null}
     </div>
   );
 }
