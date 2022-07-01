@@ -1,9 +1,11 @@
 import React, { useEffect, useState, setError } from "react";
 import axios from "axios";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 import SearchBar from "./Components/SearchBar";
 import ArtistCard from "./Components/artistCard";
-import "bootstrap/dist/css/bootstrap.min.css";
+import EventCard from "./Components/eventCard";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -43,15 +45,7 @@ function App() {
     <div className="App">
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       {searchTerm ? <ArtistCard artist={artistData} setFlag={setFlag} /> : null}
-      {flag && searchTerm ? (
-        <ul>
-          {eventData.map((r) => (
-            <li key={r.id}>
-              {r.venue.name} - {r.description}
-            </li>
-          ))}
-        </ul>
-      ) : null}
+      {flag && searchTerm ? <EventCard eventData={eventData} /> : null}
     </div>
   );
 }
