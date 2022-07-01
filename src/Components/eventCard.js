@@ -1,21 +1,26 @@
 import "./styles.css";
 import { Button } from "react-bootstrap";
+const returnDate = (datetime)=>{
+    let date = new Date( Date.parse(datetime) );
+    return date;
+
+}
 const EventCard = (props) => {
   return (
     <div className="card">
       <div className="card-body">
         <ul>
-          {props.eventData.map((r) => (
+          {props.eventData.map((r) => 
+            (
             <li key={r.id}>
-              
-              {/* <h5>Date:{" "}
-              
-                {Date.parse(r.datetime).getDate()}/{Date.parse(r.datetime).getMonth()}/{Date.parse(r.datetime).getFullYear()}
+            
+              <h5>Date:{" "}
+                {returnDate(r.datetime).getDate()}/{returnDate(r.datetime).getMonth()}/{returnDate(r.datetime).getFullYear()}
               </h5>
               <h5>Time:{" "}
               
-                {Date.parse(r.datetime).getHours()}:{Date.parse(r.datetime).getMinutes()}
-              </h5> */}
+                {returnDate(r.datetime).getHours()}:{returnDate(r.datetime).getMinutes()}
+              </h5>
               <h5>Venue: {r.venue.name}</h5>
               <h5>City: {r.venue.city}</h5>
               <h5>Country: {r.venue.country}</h5>

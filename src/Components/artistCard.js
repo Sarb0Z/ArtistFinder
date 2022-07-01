@@ -1,5 +1,6 @@
 import "./styles.css";
 import { Button } from "react-bootstrap";
+import { Facebook } from "react-bootstrap-icons";
 const ArtistCard = (props) => {
   return (
     <div className="card">
@@ -7,7 +8,7 @@ const ArtistCard = (props) => {
       <div className="card-body">
         <h3>{props.artist.name}</h3>
         <h2>Upcoming events: {props.artist.upcoming_event_count}</h2>
-        <p><a href={props.artist.facebook_page_url}>Facebook Page</a></p>
+        <p><Facebook size={24} color="blue"/><a href={props.artist.facebook_page_url}> {props.artist.name}</a></p>
         <Button className='button' variant="secondary" size="lg" onClick={props.setFlag}>
           Find Events
         </Button>
