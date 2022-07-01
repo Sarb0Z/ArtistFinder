@@ -32,7 +32,7 @@ function App() {
       try {
         const event = await axios.request({
           method: "GET",
-          url: `${process.env.REACT_APP_BASE_URL}/${artistData.name}/events/?app_id=${process.env.REACT_APP_API_KEY}`,
+          url: `${process.env.REACT_APP_BASE_URL}/artists/${artistData.name}/events/?app_id=${process.env.REACT_APP_API_KEY}`,
         });
         setEventData(event.data);
       } catch (error) {
@@ -44,7 +44,7 @@ function App() {
   return (
     <div className="App">
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      {searchTerm ? <ArtistCard artist={artistData} setFlag={setFlag} /> : null}
+      {searchTerm ? <ArtistCard artist={artistData} setFlag={setFlag} flag={flag} /> : null}
       {flag && searchTerm ? <EventCard eventData={eventData} /> : null}
     </div>
   );
