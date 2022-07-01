@@ -2,7 +2,7 @@ import React, { useEffect, useState, setError } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
+//Higher Order Components
 import SearchBar from "./Components/SearchBar";
 import ArtistCard from "./Components/artistCard";
 import EventCard from "./Components/eventCard";
@@ -17,7 +17,7 @@ function App() {
       try {
         const artist = await axios.request({
           method: "GET",
-          url: `https://rest.bandsintown.com/artists/${searchTerm}/?app_id=abc`,
+          url: `${process.env.REACT_APP_BASE_URL}/artists/${searchTerm}/?app_id=${process.env.REACT_APP_API_KEY}`,
         });
         setArtistData(artist.data);
         setFlag(false);
@@ -32,7 +32,7 @@ function App() {
       try {
         const event = await axios.request({
           method: "GET",
-          url: `https://rest.bandsintown.com/artists/${artistData.name}/events/?app_id=abc`,
+          url: `${process.env.REACT_APP_BASE_URL}/${artistData.name}/events/?app_id=${process.env.REACT_APP_API_KEY}`,
         });
         setEventData(event.data);
       } catch (error) {
