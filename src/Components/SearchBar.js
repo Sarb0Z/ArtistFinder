@@ -23,6 +23,7 @@ const SearchBar = ({ searchTerm, setSearchTerm }) => {
         </Button>
       </InputGroup>
     </Form>
+
   );
 };
 

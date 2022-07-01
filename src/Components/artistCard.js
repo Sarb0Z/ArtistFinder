@@ -3,8 +3,10 @@ import { Button } from "react-bootstrap";
 import { Facebook } from "react-bootstrap-icons";
 const ArtistCard = (props) => {
   return (
+    
     <div className="card">
       <img src={props.artist.image_url} alt="" />
+      {props.artist.name ?
       <div className="card-body">
         <h3>{props.artist.name}</h3>
         <h2>Upcoming events: {props.artist.upcoming_event_count}</h2>
@@ -16,6 +18,11 @@ const ArtistCard = (props) => {
           Go To Page
         </Button>
       </div>
+      :
+      <div className="card-body">
+        <p>Nothing found!</p>
+      </div>
+    }
     </div>
   );
 };

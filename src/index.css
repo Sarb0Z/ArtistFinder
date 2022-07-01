@@ -18,4 +18,11 @@ code {
     monospace;
 }
 
+ul {
+  list-style-type: none;
+  border: 0px solid #90bade;
+}
+
+
+
 

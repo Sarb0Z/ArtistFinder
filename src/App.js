@@ -44,7 +44,7 @@ function App() {
   return (
     <div className="App">
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      {searchTerm ? <ArtistCard artist={artistData} setFlag={setFlag} flag={flag} /> : null}
+      {searchTerm ? <ArtistCard artist={artistData} setFlag={setFlag} /> : null}
       {flag && searchTerm ? <EventCard eventData={eventData} /> : null}
     </div>
   );
