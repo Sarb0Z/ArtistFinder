@@ -1,5 +1,4 @@
-// import React from 'react';
-// import { useHistory } from 'react-router-dom';
+
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
@@ -9,8 +8,8 @@ import { Search } from "react-bootstrap-icons";
 
 const SearchBar = ({ searchTerm, setSearchTerm }) => {
   return (
-    <Form>
-      <InputGroup className="col-6">
+    <Form className="Form">
+      <InputGroup className="mb-3 col-sm-3">
         <FormControl
           placeholder="Search for Artists"
           aria-label="Search"

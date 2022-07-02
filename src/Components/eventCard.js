@@ -1,4 +1,4 @@
-import "./styles.css";
+import '../styling/styles.css';
 import { Download } from "react-bootstrap-icons";
 import { Button } from "react-bootstrap";
 
@@ -13,6 +13,7 @@ const EventCard = (props) => {
   };
   return (
     <div className="card">
+      {props.eventData[0] ?
       <div className="card-body">
           {props.eventData.map((r) => 
           <ul >
@@ -35,9 +36,12 @@ const EventCard = (props) => {
             </ul>
             )
           }
-           
-      
+      </div>:
+      <div className="card-body">
+        <p>No events registered!</p>
       </div>
+      }
+
     </div>
   );
 };

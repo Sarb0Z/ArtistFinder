@@ -1,4 +1,4 @@
-import "./styles.css";
+import '../styling/styles.css';
 import { Button } from "react-bootstrap";
 import { Facebook } from "react-bootstrap-icons";
 const ArtistCard = (props) => {

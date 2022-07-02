@@ -6,6 +6,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import SearchBar from "./Components/SearchBar";
 import ArtistCard from "./Components/artistCard";
 import EventCard from "./Components/eventCard";
+
+//api request functions
 import fetchArtist from "./api/fetchArtistData";
 import fetchEvent from "./api/fetchEventData";
 
@@ -18,7 +20,7 @@ function App() {
   //will re-render artist card once search query is changed
   useEffect(() => fetchArtist(searchTerm, setFlag, setArtistData), [searchTerm]);
 
-  //will re-render events list when event info button is clicked
+  //will render events list when event info button is clicked
   useEffect(() => fetchEvent(artistData.name, setEventData), [flag]);
 
   return (
