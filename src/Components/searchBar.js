@@ -10,7 +10,7 @@ const SearchBar = ({ searchTerm, setSearchTerm }) => {
   return (
     <Form className="Form">
       <InputGroup className="mb-3 col-sm-3">
-        <FormControl
+        <FormControl id="searchbar"
           placeholder="Search for Artists"
           aria-label="Search"
           aria-describedby="basic-addon2"

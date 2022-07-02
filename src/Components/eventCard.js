@@ -17,7 +17,7 @@ const EventCard = (props) => {
       <div className="card-body">
           {props.eventData.map((r) => 
           <ul >
-            <li className="event-container" key={r.id}>
+            <li className="event-container" key={r.id} id={"id"+r.id}>
               <h5>
                 Date: {returnDate(r.datetime)}
               </h5>
@@ -31,7 +31,7 @@ const EventCard = (props) => {
                 <h5>Tickets Available: {r.offers.status}</h5>
               ) : null}
               {r.description ? <h5>Description: {r.description}</h5> : null}
-              <Button className="download-container" variant='secondary' disabled={!r.offers.status}>Buy Ticket <Download/></Button>
+              <Button className="download-container" variant='secondary' disabled={!r.offers.status}>Buy Ticket <Download id="d-b"/></Button>
             </li>
             </ul>
             )
