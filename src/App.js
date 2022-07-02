@@ -5,7 +5,7 @@ import "./styling/App.css"
 
 //Higher Order Components
 import Header from "./Components/header";
-import SearchBar from "./Components/SearchBar";
+import SearchBar from "./Components/searchBar";
 import ArtistCard from "./Components/artistCard";
 import EventCard from "./Components/eventCard";
 
