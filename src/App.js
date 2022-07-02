@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./styling/App.css"
 
 //Higher Order Components
+import Header from "./Components/header";
 import SearchBar from "./Components/SearchBar";
 import ArtistCard from "./Components/artistCard";
 import EventCard from "./Components/eventCard";
@@ -25,6 +27,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header className="Header"/>
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       {searchTerm ? <ArtistCard artist={artistData} setFlag={setFlag} /> : null}
       {flag && searchTerm ? <EventCard eventData={eventData} /> : null}
