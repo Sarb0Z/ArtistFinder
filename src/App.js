@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./styling/App.css"
+import "./Styles/App.css"
 
 //Higher Order Components
-import Header from "./Components/header";
-import SearchBar from "./Components/searchBar";
-import ArtistCard from "./Components/artistCard";
-import EventCard from "./Components/eventCard";
+import Header from "./Components/NavBar/header";
+import SearchBar from "./Components/SearchBar/searchBar";
+import ArtistCard from "./Components/Artist/artistCard";
+import EventCard from "./Components/Events/eventCard";
 
 //api request functions
 import fetchArtist from "./api/fetchArtistData";

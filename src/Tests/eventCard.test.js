@@ -2,7 +2,7 @@ import React from "react";
 import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
 
-import EventCard from "../Components/eventCard";
+import EventCard from "../Components/Events/eventCard";
 
 
 

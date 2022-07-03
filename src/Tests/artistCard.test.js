@@ -3,7 +3,7 @@ import React from "react";
 import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
 
-import ArtistCard from "../Components/artistCard";
+import ArtistCard from "../Components/Artist/artistCard";
 
 
 

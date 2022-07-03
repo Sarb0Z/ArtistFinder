@@ -4,7 +4,7 @@ import { act } from "react-dom/test-utils";
 //import { createRoot } from 'react-dom/client';
 
 
-import SearchBar from "../Components/searchBar";
+import SearchBar from "../Components/SearchBar/searchBar";
 
 let container = null;
 //let root=null;
