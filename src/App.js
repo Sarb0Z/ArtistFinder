@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Styles/App.css"
+//import "./Styles/App.css"
 
 //Higher Order Components
 import Header from "./Components/NavBar/header";
