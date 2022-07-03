@@ -10,7 +10,8 @@ export default function fetchEvent(name, setEventData){
           });
           setEventData(event.data);
         } catch (error) {
-          setError(error);
+          // setError(error);
+          console.log(error);
         }
       })();
 }

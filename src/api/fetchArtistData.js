@@ -12,7 +12,8 @@ export default function fetchArtist(searchTerm, setFlag, setArtistData){
           setArtistData(artist.data);
           setFlag(false);
         } catch (error) {
-          setError(error);
+          // setError(error);
+          console.log(error);
         }
       })();
 }
