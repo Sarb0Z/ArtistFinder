@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ArtistFinder/static/css/main.75a75c93.css",
+    "main.js": "/ArtistFinder/static/js/main.05588c63.js",
+    "index.html": "/ArtistFinder/index.html",
+    "main.75a75c93.css.map": "/ArtistFinder/static/css/main.75a75c93.css.map",
+    "main.05588c63.js.map": "/ArtistFinder/static/js/main.05588c63.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.75a75c93.css",
+    "static/js/main.05588c63.js"
+  ]
+}
