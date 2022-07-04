@@ -1,5 +1,5 @@
 import "../Styles/styles.css";
-import { Download } from "react-bootstrap-icons";
+import { Download, Envelope } from "react-bootstrap-icons";
 import { Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
@@ -35,6 +35,7 @@ const EventCard = (props) => {
             <div className="card-body">
               <ul>
                 <li className="event-container" key={r.id} id={"id" + r.id}>
+                  <h6 className="card-text">{r.lineup}</h6>
                   <h5>Date: {returnDate(r.datetime)}</h5>
                   <h5>Time: {returnTime(r.datetime)}</h5>
                   <h5>Venue: {r.venue.name}</h5>
@@ -44,12 +45,20 @@ const EventCard = (props) => {
                     <h5>Tickets Available: {r.offers.status}</h5>
                   ) : null}
                   {r.description ? <h5>Description: {r.description}</h5> : null}
+                  
                   <Button
                     className="download-container"
                     variant="secondary"
                     disabled={!r.offers.status}
+                    href={r.offers.url}
                   >
                     Buy Ticket <Download id="d-b" />
+                  </Button>
+                  <Button
+                    className="download-container"
+                    variant="secondary"
+                  >
+                    Leave Review <Envelope id="r-b" href={r.url} />
                   </Button>
                 </li>
               </ul>

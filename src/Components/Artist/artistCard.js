@@ -8,9 +8,9 @@ const ArtistCard = (props) => {
       <img src={props.artist.image_url} alt="" />
       {props.artist.name ?
       <div className="card-body">
-        <h3>{props.artist.name}</h3>
-        <h2>Upcoming events: {props.artist.upcoming_event_count}</h2>
-        <p><Facebook size={24} color="blue"/><a href={props.artist.facebook_page_url}> {props.artist.name}</a></p>
+        <h3 class="card-title">{props.artist.name}</h3>
+        <h6 class="card-subtitle mb-2 text-muted">Upcoming events: {props.artist.upcoming_event_count}</h6>
+        <p class="card-text"><Facebook size={24} color="blue"/><a href={props.artist.facebook_page_url}> {props.artist.name}</a></p>
         <Button className='button' variant="secondary" size="lg" onClick={()=>props.setFlag(!props.flag)}>
           Find Events
         </Button>

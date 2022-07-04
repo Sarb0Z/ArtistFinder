@@ -4,7 +4,6 @@ import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import { Search } from "react-bootstrap-icons";
-import Dropdown from "../Suggestions/dropDownList";
 
 
 const SearchBar = ({ searchTerm, setSearchTerm }) => {

@@ -26,7 +26,7 @@ const Header = (props) => {
             <NavDropdown title="Choose Date" id="basic-nav-dropdown">
               <NavDropdown.Item>
                 Choose Date
-                <Calendar onChange={setDate} />
+                <Calendar onChange={setDate}/>
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item>Pick Range</NavDropdown.Item>

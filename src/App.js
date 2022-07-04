@@ -12,7 +12,7 @@ import EventCard from "./Components/Events/eventCard";
 //api request functions
 import fetchArtist from "./api/fetchArtistData";
 import fetchEvent from "./api/fetchEventData";
-import Suggestions from "./Components/Suggestions/dropDownList";
+import Suggestions from "./Components/Suggestions/mapSuggestions";
 //import users from "./Cache/data";
 
 function App() {
@@ -20,6 +20,10 @@ function App() {
   const [artistData, setArtistData] = useState([]);
   const [eventData, setEventData] = useState([]);
   const [flag, setFlag] = useState(false);
+  const defaultVals={
+    "id": 1,
+    "artists": ["Atif Aslam","Rihanna","Harry Styles"],
+  }
 
   // const [today, setToday] = useState(false);
   // const [upcoming, setUpcoming] = useState(false);
@@ -43,7 +47,7 @@ function App() {
         // setDate={setDate}
       />
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-
+      {/* <Suggestions userId={defaultVals.id} artists={defaultVals.artists}/> */}
       {searchTerm ? <ArtistCard artist={artistData} setFlag={setFlag} flag={flag}/> : null}
       {flag && searchTerm ? (
         <EventCard
