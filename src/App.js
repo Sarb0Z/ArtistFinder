@@ -44,7 +44,7 @@ function App() {
       />
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
-      {searchTerm ? <ArtistCard artist={artistData} setFlag={setFlag} /> : null}
+      {searchTerm ? <ArtistCard artist={artistData} setFlag={setFlag} flag={flag}/> : null}
       {flag && searchTerm ? (
         <EventCard
           eventData={eventData}

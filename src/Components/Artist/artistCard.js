@@ -11,7 +11,7 @@ const ArtistCard = (props) => {
         <h3>{props.artist.name}</h3>
         <h2>Upcoming events: {props.artist.upcoming_event_count}</h2>
         <p><Facebook size={24} color="blue"/><a href={props.artist.facebook_page_url}> {props.artist.name}</a></p>
-        <Button className='button' variant="secondary" size="lg" onClick={()=>props.setFlag(true)}>
+        <Button className='button' variant="secondary" size="lg" onClick={()=>props.setFlag(!props.flag)}>
           Find Events
         </Button>
         <Button className='button' variant="success" size="lg" onClick={() => window.open(props.artist.url, '_blank')}>
