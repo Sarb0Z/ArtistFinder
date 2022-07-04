@@ -13,6 +13,7 @@ import EventCard from "./Components/Events/eventCard";
 import fetchArtist from "./api/fetchArtistData";
 import fetchEvent from "./api/fetchEventData";
 import Suggestions from "./Components/Suggestions/mapSuggestions";
+import fetchQueriedEvent from "./api/fetchQueriedEventDay";
 //import users from "./Cache/data";
 
 function App() {
@@ -20,14 +21,14 @@ function App() {
   const [artistData, setArtistData] = useState([]);
   const [eventData, setEventData] = useState([]);
   const [flag, setFlag] = useState(false);
-  const defaultVals={
-    "id": 1,
-    "artists": ["Atif Aslam","Rihanna","Harry Styles"],
-  }
+  const defaultVals = {
+    id: 1,
+    artists: ["Atif Aslam", "Rihanna", "Harry Styles"],
+  };
 
-  // const [today, setToday] = useState(false);
-  // const [upcoming, setUpcoming] = useState(false);
-  // const [date, setDate] = useState(new Date());
+  const [today, setToday] = useState(false);
+  const [upcoming, setUpcoming] = useState(false);
+  const [date, setDate] = useState(new Date());
 
   //will re-render artist card once search query is changed
   useEffect(
@@ -38,17 +39,27 @@ function App() {
   //will render events list when event info button is clicked
   useEffect(() => fetchEvent(artistData.name, setEventData), [flag]);
 
+  useEffect(
+    () => fetchQueriedEvent(artistData.name, setEventData, today, upcoming, date),
+    [today, upcoming, date]
+  );
+
   return (
     <div className="App">
       <Header
         className="Header"
-        // setToday={setToday}
-        // setUpcoming={setUpcoming}
-        // setDate={setDate}
+        setToday={setToday}
+        setUpcoming={setUpcoming}
+        setDate={setDate}
+        date={date}
+        upcoming={upcoming}
+        today={today}
       />
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       {/* <Suggestions userId={defaultVals.id} artists={defaultVals.artists}/> */}
-      {searchTerm ? <ArtistCard artist={artistData} setFlag={setFlag} flag={flag}/> : null}
+      {searchTerm ? (
+        <ArtistCard artist={artistData} setFlag={setFlag} flag={flag} />
+      ) : null}
       {flag && searchTerm ? (
         <EventCard
           eventData={eventData}

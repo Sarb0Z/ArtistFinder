@@ -56,6 +56,7 @@
   letter-spacing: 0.04em;
   margin: 1.4em 0 0 0;
   text-transform: uppercase;
+  align-items: center;
 }
 
 .card-body {
@@ -127,11 +128,11 @@
 }
 
 :root {
-  --gradient: linear-gradient(to left top, #008B8B  10%, #ff512f 90%) !important;
+  --gradient: linear-gradient(to left top, #246464  10%, #c4513b 90%) !important;
 }
 
 body {
-  background: #111 !important;
+  background: #c9c0bb  !important;
 }
 
 .react-calendar{

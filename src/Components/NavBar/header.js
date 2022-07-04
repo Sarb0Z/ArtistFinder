@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Container, Nav, NavDropdown, Form } from "react-bootstrap";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import logo from "../Styles/bands.svg"
 
 const Header = (props) => {
 
-  const {setToday, setUpcoming, setDate} = props;
+  const {setToday, setUpcoming, date, setDate, today, upcoming} = props;
 
   return (
     <Navbar bg="light" expand="lg">
@@ -14,19 +14,21 @@ const Header = (props) => {
         <Navbar.Brand href="">
           <img src={logo} width="120" height="40" />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link onClick={()=>setToday(true)}>
+            <Nav.Link onSelect={()=>setToday(!today)}>
               Today
             </Nav.Link>
-            <Nav.Link onClick={()=>setUpcoming(true)}>
+            <Nav.Link onSelect={()=>setUpcoming(!upcoming)}>
               Upcoming
             </Nav.Link>
             <NavDropdown title="Choose Date" id="basic-nav-dropdown">
               <NavDropdown.Item>
-                Choose Date
-                <Calendar onChange={setDate}/>
+                <Form>
+                <Calendar title="Choose Date" value={date} onChange={setDate}/>
+                </Form>
+
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item>Pick Range</NavDropdown.Item>
