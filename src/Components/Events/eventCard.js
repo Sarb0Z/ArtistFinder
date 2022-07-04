@@ -1,6 +1,7 @@
 import "../Styles/styles.css";
 import { Download } from "react-bootstrap-icons";
 import { Button } from "react-bootstrap";
+import { useEffect, useState } from "react";
 
 const EventCard = (props) => {
   const returnDate = (datetime) => {
@@ -11,11 +12,26 @@ const EventCard = (props) => {
     let date = new Date(Date.parse(datetime));
     return date.toLocaleTimeString();
   };
-  return (
-    <div className="card">
-      {props.eventData[0] ? (
-        <>
-          {props.eventData.map((r) => (
+
+  const CardDate = () => {
+    let dateQuery=new Date(Date.parse(props.eventData.datetime));
+    let list=props.eventData;
+
+    // useEffect(()=>{
+    //   if (props.date){
+    //     setList(props.eventData.filter((data)=>Date.parse(data.datetime)===Date.parse(props.date)));
+    //   }
+    //   else if (props.upcoming){
+    //     setList(props.eventData.filter((data)=>Date.parse(data.datetime)>dateQuery));
+    //   }
+    //   else if (props.today){
+    //     setList(props.eventData.filter((data)=>Date.parse(data.datetime)===dateQuery));
+    //   }
+    // },[props.today, props.upcoming, props.date]);
+
+    return (
+      <>
+          {list.map((r) => (
             <div className="card-body">
               <ul>
                 <li className="event-container" key={r.id} id={"id" + r.id}>
@@ -40,6 +56,14 @@ const EventCard = (props) => {
             </div>
           ))}
         </>
+    )
+
+
+  }
+  return (
+    <div className="card">
+      {props.eventData[0] ? (
+        CardDate()
       ) : (
         <div className="card-body">
           <p>No events registered!</p>

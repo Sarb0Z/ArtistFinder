@@ -1,8 +1,10 @@
-import React, { setError } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import axios from "axios";
 
+// import { getArtistsCache, setArtistsToCache } from '../Cache/artistsCache';
+
 export default function fetchArtist(searchTerm, setFlag, setArtistData){
-    
+  
     (async () => {
         try {
           const artist = await axios.request({

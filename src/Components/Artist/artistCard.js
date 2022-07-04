@@ -20,7 +20,7 @@ const ArtistCard = (props) => {
       </div>
       :
       <div className="card-body">
-        <p>Nothing found!</p>
+        <p>No Artists found!</p>
       </div>
     }
     </div>
