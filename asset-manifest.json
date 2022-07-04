@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/ArtistFinder/static/css/main.18a49c37.css",
-    "main.js": "/ArtistFinder/static/js/main.3726baba.js",
+    "main.css": "/ArtistFinder/static/css/main.fda26177.css",
+    "main.js": "/ArtistFinder/static/js/main.be665209.js",
     "static/media/bands.svg": "/ArtistFinder/static/media/bands.9a5f4c94925f18dc2d865743090c04f0.svg",
     "index.html": "/ArtistFinder/index.html",
-    "main.18a49c37.css.map": "/ArtistFinder/static/css/main.18a49c37.css.map",
-    "main.3726baba.js.map": "/ArtistFinder/static/js/main.3726baba.js.map"
+    "main.fda26177.css.map": "/ArtistFinder/static/css/main.fda26177.css.map",
+    "main.be665209.js.map": "/ArtistFinder/static/js/main.be665209.js.map"
   },
   "entrypoints": [
-    "static/css/main.18a49c37.css",
-    "static/js/main.3726baba.js"
+    "static/css/main.fda26177.css",
+    "static/js/main.be665209.js"
   ]
 }
